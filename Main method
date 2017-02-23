@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Babylonian
+{
+ public static double babMethod(double num, double err, double guess )
+ {
+   if((guess*guess) - num <= err)
+   {
+     return guess;
+   }
+   else
+   {
+     guess = (guess + (num/guess))/2;
+     return babMethod(num, err, guess);
+   }
+ }
+  
+ public static void main(String[] args)
+ {
+  double num;
+  double err;
+  double guess;
+  
+  Scanner scan = new Scanner(System.in);
+  
+  System.out.println("Enter a number to find the square root of: ");
+  num = scan.nextDouble();
+  System.out.println("How much error do you want?");
+  err = scan.nextDouble();
+  guess = num / 2;
+  System.out.println("The guess for the square root of " + num + " is: " + babMethod(num, err, guess));
+  
+ }
+  
+}

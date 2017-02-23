@@ -1,0 +1,18 @@
+public class Babylonian
+{
+ public double babMethod(double num, double err, double guess )
+ {
+   if((guess*guess) - <= err)
+   {
+     return guess;
+   }
+   else
+   {
+     guess = (guess + (num/guess))/2;
+     return babMethod(num, err, guess);
+   }
+ }
+  
+ public static void main(String[] args)
+  
+}
